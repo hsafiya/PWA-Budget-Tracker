@@ -31,5 +31,5 @@ please click the link. [MIT](https://choosealicense.com/licenses/mit/)
 ## Screen shot and link to application
 
 
-![GitHub Logo](./icons/screenshot.png)
+![GitHub Logo](./public/icons/screenshot.png)
 
