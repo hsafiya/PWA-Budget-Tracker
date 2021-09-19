@@ -44,3 +44,22 @@ const saveRecord = (record) => {
             if (serverResponse.message) {
               throw new Error(serverResponse)
             }
+               //open one more transaction
+          const transaction = db.transaction(['pending'], 'readwrite')
+
+          //access the pending object store
+          const store = transaction.objectStore('pending')
+
+          //clear all items in store
+          store.clear()
+
+          alert('All pending transactions have been submitted!')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }
+}
+
+window.addEventListener('online', offlineData)
