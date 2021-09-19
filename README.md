@@ -31,4 +31,4 @@ please click the link. [MIT](https://choosealicense.com/licenses/mit/)
 ## Screen shot and link to application
 
 [Budget-Tracker]
-![screenshot budget-tracker]
+![screenshot budget-tracker]("../img/screenshot.png")
