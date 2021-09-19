@@ -14,4 +14,5 @@ request.onsuccess = (e) => {
       offlineData()
     }
   }
-  
+  // error handling
+request.onerror = (e) => console.log(e.target.errorCode)
