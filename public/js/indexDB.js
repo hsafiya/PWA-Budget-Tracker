@@ -29,3 +29,18 @@ const saveRecord = (record) => {
     const allRecords = store.getAll()
   
     allRecords.onsuccess = () => {
+        // if any data stored in indexDB, update database
+    if (allRecords.result.length > 0) {
+        fetch('/api/transaction/bulk', {
+          method: 'POST',
+          body: JSON.stringify(allRecords.result),
+          headers: {
+            Accept: 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => response.json())
+          .then((serverResponse) => {
+            if (serverResponse.message) {
+              throw new Error(serverResponse)
+            }
